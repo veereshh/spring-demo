@@ -10,7 +10,11 @@ pipeline {
     }
 
     stages {
-        
+        stage('checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/veereshh/spring-demo.git'
+            }
+        }
         stage('build'){
             steps{
                 sh './mvnw clean package'
