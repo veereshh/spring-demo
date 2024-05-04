@@ -27,8 +27,8 @@ pipeline {
         }
         stage('push docker image'){
             steps{
-                sh 'docker tag spring-demo:${latestCommitId} veereshh220/demo'
-                sh 'docker push veereshh220/demo'
+                sh 'docker tag spring-demo:${latestCommitId} veereshh220/demo:${latestCommitId}'
+                sh 'docker push veereshh220/demo:${latestCommitId}'
             }
         }
         stage('deploy app in k8s cluster'){
