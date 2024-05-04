@@ -30,14 +30,14 @@ pipeline {
             steps{
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerregistry')]) {
                     sh 'docker login -u veereshh220 -p ${dockerregistry}'
-                    sh 'docker tag spring-demo:${latestCommitId} veereshh220/demo:${latestCommitId}'
-                    sh 'docker push veereshh220/demo:${latestCommitId}'
+                    sh 'docker tag spring-demo:${latestCommitId} veereshh220/spring-demo:${latestCommitId}'
+                    sh 'docker push veereshh220/spring-demo:${latestCommitId}'
                 }   
             }
         }
         stage('deploy app in k8s cluster'){
             steps{
-                ech 'hi'
+                echo 'hi'
             }
             
         }
