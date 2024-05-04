@@ -23,13 +23,13 @@ pipeline {
         }
         stage('build docker image'){
             steps{
-                sh 'sudo docker build -t spring-demo:${latestCommitId} .'
+                sh 'docker build -t spring-demo:${latestCommitId} .'
             }
         }
         stage('push docker image'){
             steps{
-                sh 'sudo docker tag spring-demo:${latestCommitId} veereshh220/demo:${latestCommitId}'
-                sh 'sudo docker push veereshh220/demo:${latestCommitId}'
+                sh 'docker tag spring-demo:${latestCommitId} veereshh220/demo:${latestCommitId}'
+                sh 'docker push veereshh220/demo:${latestCommitId}'
             }
         }
         stage('deploy app in k8s cluster'){
