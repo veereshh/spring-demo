@@ -29,7 +29,7 @@ pipeline {
         stage('push docker image'){
             steps{
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub-pass')]) {
-                    sh 'docker login -u veereshh220 -p ${dockerhub}'
+                    sh 'docker login -u veereshh220 -p ${dockerhub-pass}'
                     sh 'docker tag spring-demo:${latestCommitId} veereshh220/demo:${latestCommitId}'
                     sh 'docker push veereshh220/demo:${latestCommitId}'
                 }   
