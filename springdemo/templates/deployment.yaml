@@ -14,6 +14,6 @@ spec:
     spec: 
       containers: 
       - name: springdemo-container
-        image: {{.Values.imageName}}:{{.Values.imageTag}}
+        image: {{.Values.imageName}} : {{.Values.imageTag}}
         ports:
         - containerPort: {{.Values.containerPort}}
