@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: springdemo-deployment
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchlabels:
+      app: {{.Values.appLabel}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.appLabel}}
+    spec: 
+      containers: 
+      - name: springdemo-container
+        image: {{.Values.imageName}}:{{.Values.imageTag}}
+        ports:
+        - containerPort: {{.Values.containerPort}}

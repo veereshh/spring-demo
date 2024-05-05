@@ -1,0 +1,10 @@
+replicaCount: 3
+
+appLabel: spring-demo
+
+imageName: veereshh220/spring-demo
+
+imageTag: latest
+
+containerPort: 80
+

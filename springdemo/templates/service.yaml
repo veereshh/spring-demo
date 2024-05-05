@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: springdemo-service
+spec:
+  selector:
+    app: {{.Values.appLabel}}
+  type: ClusterIp
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: {{.Values.containerPort}}
+
+  
