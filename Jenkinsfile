@@ -36,11 +36,10 @@ pipeline {
             }
         }
         stage('deploy app in k8s cluster'){
-            kubernetes{
-                steps{
-                    sh 'helm install spring-demo  ./springdemo/ --set imageTag=${latestCommitId} --values ./springdemo/values.yaml'
-                }
+            steps{
+                sh 'helm install spring-demo  ./springdemo/ --set imageTag=${latestCommitId} --values ./springdemo/values.yaml '
             }
+            
         }
     }
 }
