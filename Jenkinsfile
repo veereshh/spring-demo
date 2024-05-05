@@ -37,7 +37,7 @@ pipeline {
         }
         stage('deploy app in k8s cluster'){
             steps{
-                sh 'sudo helm install spring-demo  ./springdemo/ --set imageTag=${latestCommitId} --values ./springdemo/values.yaml '
+                sh 'helm install spring-demo  ./springdemo/ --set imageTag=${latestCommitId} --values ./springdemo/values.yaml '
             }
             
         }
