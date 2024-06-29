@@ -38,7 +38,7 @@ pipeline {
         stage('deploy app in k8s cluster'){
             steps{
                 withKubeConfig(credentialsId: 'kubeConfig', serverUrl: 'https://192.168.0.10:6443') {
-                    sh 'helm upgrade spring-demo  ./springdemo --set imageTag=${latestCommitId}'
+                    sh 'helm install spring-demo  ./springdemo --set imageTag=${latestCommitId}'
                 }
            }            
         }
