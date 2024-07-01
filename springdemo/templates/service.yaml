@@ -5,10 +5,11 @@ metadata:
 spec:
   selector:
     app: {{.Values.appLabel}}
-  type: ClusterIP
+  type: NodePort
   ports: 
   - protocol: TCP
     port: 80
     targetPort: {{.Values.containerPort}}
+    nodePort: 30001
 
   
