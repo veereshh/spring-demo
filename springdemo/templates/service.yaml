@@ -10,6 +10,5 @@ spec:
   - protocol: TCP
     port: 8090
     targetPort: {{.Values.containerPort}}
-    nodePort: 30020
-
+    
   

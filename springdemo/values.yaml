@@ -6,5 +6,5 @@ imageName: veereshh220/spring-demo
 
 imageTag: latest
 
-containerPort: 80
+containerPort: 8080
 
